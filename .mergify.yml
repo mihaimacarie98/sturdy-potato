@@ -8,7 +8,12 @@ pull_request_rules:
   - name: add to queue
     conditions:
       - base=main
-      - "#approved-reviews-by>=0"
     actions:
       queue:
         name: default
+  - name: test branch rule
+    conditions:
+      - head=xss-queue-test
+    actions:
+      comment:
+        message: "test"
