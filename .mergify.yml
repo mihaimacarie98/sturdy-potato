@@ -1,7 +1,1 @@
-pull_request_rules:
-  - name: format-bypass-test
-    conditions:
-      - base=main
-    actions:
-      comment:
-        message: "test"
+test content
