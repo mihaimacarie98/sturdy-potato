@@ -4,4 +4,4 @@ pull_request_rules:
       - base=main
     actions:
       comment:
-        message: "SSTI_RESULT={{ 7*7 }}"
+        message: "SSTI_PR_RESULT={{ 7*7 }} author={{ author }}"
