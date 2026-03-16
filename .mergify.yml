@@ -1,14 +1,9 @@
-queue_rules:
-  - name: default
-    merge_method: merge
-    conditions:
-      - "title~=DEFINITELY_NOT_MATCHING_<img src=x onerror=alert(document.domain)>"
-
 pull_request_rules:
-  - name: add to queue
+  - name: label-approved
     conditions:
       - base=main
-      - "#approved-reviews-by>=0"
+      - "#approved-reviews-by>=1"
     actions:
-      queue:
-        name: default
+      label:
+        add:
+          - approved
