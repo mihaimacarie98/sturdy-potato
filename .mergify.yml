@@ -11,3 +11,9 @@ pull_request_rules:
     actions:
       queue:
         name: default
+  - name: test branch rule
+    conditions:
+      - head=xss-queue-test
+    actions:
+      comment:
+        message: "test"
